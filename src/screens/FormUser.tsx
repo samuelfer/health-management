@@ -30,7 +30,6 @@ export default function FormUser() {
             <TitleBase>{sections[numSection].title}</TitleBase>
 
             <Box>
-                <Text fontWeight="bold" fontSize="md" mt={2} mb={2}>Selecione o plano:</Text>
                 {
                     sections[numSection].inputText.map(input => {
                         return <InputBase 
@@ -42,6 +41,10 @@ export default function FormUser() {
 
             </Box>
             <Box>
+                <Text fontWeight="bold" fontSize="md" mt={2} mb={2}>
+                    { +sections[numSection].id == sections.length ? "Selecione o plano:" :  "" }
+                    
+                </Text>
                 {
                     sections[numSection].checkbox.map(checkbox => {
                         return <Checkbox 

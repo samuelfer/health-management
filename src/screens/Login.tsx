@@ -14,13 +14,15 @@ export default function Login({ navigation}) {
             inputText: [
                 {
                     id:1,
-                    label: 'Nome',
-                    placeholder: 'Informe seu nome'
+                    label: 'Email',
+                    placeholder: 'Informe seu email',
+                    secureTextEntry: false
                 },
                 {
                     id:2,
-                    label: 'Email',
-                    placeholder: 'Informe seu email'
+                    label: 'Senha',
+                    placeholder: 'Informe sua senha',
+                    secureTextEntry: true
                 }
             ]
         }
@@ -37,7 +39,9 @@ export default function Login({ navigation}) {
                     sections[0].inputText.map(input => {
                         return <InputBase 
                             label={input.label} 
-                            placeholder={input.placeholder} key={input.id}
+                            placeholder={input.placeholder}
+                            secureTextEntry={input.secureTextEntry}
+                            key={input.id}
                         />
                     })
                 }
